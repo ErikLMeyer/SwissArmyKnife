@@ -1,0 +1,29 @@
+public class sak {
+    public static void main(String args[]) {
+        if (args.length < 1) { // Not enough args
+            System.out.println("Insufficient arguments. Please try again. Type -Help for more info.");
+        } else if (args[0].equalsIgnoreCase("-Help")) { // User wants help
+            System.out.println("Getting help...");
+            Help.printH();
+        } else if (args[0].equalsIgnoreCase("-httprequest")) { // User wants to print a url
+            if (args.length < 2) { // Didn't give a url
+                System.out.println("Requests require a url. Please try again.");
+            } else if (args.length > 2) { // User entered an extra arguement
+                System.out.println("Too many arguments. Please try again.");
+            } else {
+                System.out.println("Fetching data...");
+                // Do http/url stuff here
+            }
+        } else if (args[0].equalsIgnoreCase("-httprequestindex")) { // User wants to print any urls found within a url
+            if (args.length < 2) { // Didn't give a url
+                System.out.println("Requests require a url. Please try again.");
+            } else if (args.length > 2) { // User entered an extra arguement
+                System.out.println("Too many arguments. Please try again.");
+            } else {
+                System.out.println("Fetching data...");
+                // Do http/url index stuff here
+            }
+        }
+    }
+
+}
