@@ -12,7 +12,10 @@ public class sak {
                 System.out.println("Too many arguments. Please try again.");
             } else {
                 System.out.println("Fetching data...");
-                // Do http/url stuff here
+                Req request = new Req();
+                if (request.readLink(args[1])){ // args[1] should equal the URL
+                    System.out.println(request);
+                }
             }
         } else if (args[0].equalsIgnoreCase("-httprequestindex")) { // User wants to print any urls found within a url
             if (args.length < 2) { // Didn't give a url
@@ -21,7 +24,7 @@ public class sak {
                 System.out.println("Too many arguments. Please try again.");
             } else {
                 System.out.println("Fetching data...");
-                // Do http/url index stuff here
+                // Do http/url stuff here
             }
         }
     }
