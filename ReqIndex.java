@@ -24,9 +24,12 @@ class ReqIndex extends Req{
         for (String line : linkContent){
             lineCounter++;
             if (line.contains("https://")){
-                foundLink = line.substring(line.indexOf("https://"), line.lastIndexOf("\"") - 1);
+                foundLink = line.substring(line.indexOf("https://"), line.lastIndexOf("\""));
+                System.out.println("Current link = " + foundLink);
                 listOLinks.add(new Req(foundLink));
+                System.out.println("Request added: " + listOLinks.get(listOLinks.size()-1));
                 lineNums.add(lineCounter);
+                System.out.println("Line added: Line " + lineNums.get(lineNums.size()-1));
                 if (listOLinks.get(listOLinks.size()-1).readLink()){
                     itWorked = true;
                 } else{
@@ -48,8 +51,8 @@ class ReqIndex extends Req{
         for (String inTheArrList : linkContent){
             lineCounter++;
             theContent = theContent + inTheArrList + "\n";
-            if (lineNums.get(arrayCounter) == lineCounter){
-                theContent = "\t" + listOLinks.get(arrayCounter);
+            if (arrayCounter < lineNums.size() && lineNums.get(arrayCounter) == lineCounter){
+                theContent = theContent + "\n" + listOLinks.get(arrayCounter) + "\n";
                 arrayCounter++;
             }
         }
