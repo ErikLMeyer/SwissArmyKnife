@@ -14,15 +14,6 @@ class ReqIndex extends Req{
         super(requestedLink);
         listOLinks = new ArrayList<Req>();
         lineNums = new ArrayList<Integer>();
-
-        if (readLink()){
-            if (loadIndex()){
-                System.out.println("Index loaded.");
-                System.out.println(this);
-            } else{
-                System.out.println("Index load failed.");
-            }
-        }
     }
 
     public Boolean loadIndex(){

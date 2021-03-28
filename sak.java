@@ -25,6 +25,12 @@ public class sak {
             } else {
                 System.out.println("Fetching data...");
                 // Do http/url stuff here
+                ReqIndex request = new ReqIndex(args[1]);
+                if (request.readLink(args[1])){
+                    if (request.loadIndex()){
+                        System.out.println(request);
+                    }
+                }
             }
         }
     }
