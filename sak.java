@@ -1,5 +1,6 @@
 public class sak {
     public static void main(String args[]) {
+        long start = System.currentTimeMillis();
         if (args.length < 1) { // Not enough args
             System.out.println("Insufficient arguments. Please try again. Type -Help for more info.");
         } else if (args[0].equalsIgnoreCase("-Help")) { // User wants help
@@ -33,6 +34,8 @@ public class sak {
                 }
             }
         }
+
+        System.out.println("Application took " + (System.currentTimeMillis() - start) + "ms to complete.");
     }
 
 }
