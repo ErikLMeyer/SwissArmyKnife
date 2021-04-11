@@ -33,6 +33,9 @@ public class sak {
                     }
                 }
             }
+        } else if (args[0].equalsIgnoreCase("-sleep")) {
+            Sleep mySleeper = new Sleep(0);
+            mySleeper.sleep();
         }
 
         System.out.println("Application took " + (System.currentTimeMillis() - start) + "ms to complete.");
